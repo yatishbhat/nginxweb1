@@ -11,6 +11,7 @@ pipeline {
                 script {
                     sh "docker build -t ${DOCKER_IMAGE_NAME} ."
                    
+                   
                 }
             }
         }
@@ -30,7 +31,7 @@ pipeline {
             steps {
                 script {
                     sh "docker pull ${DOCKER_IMAGE_NAME}"
-                    sh "docker run -d -p ${IP_ADDRESS}:${PORT}:80 ${DOCKER_IMAGE_NAME}"
+                    sh "docker run -d -P -p ${IP_ADDRESS}:8000-8009:80 ${DOCKER_IMAGE_NAME}"
                 }
             }
         }
