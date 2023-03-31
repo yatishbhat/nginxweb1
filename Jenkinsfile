@@ -10,8 +10,7 @@ pipeline {
             steps {
                 script {
                     sh "docker build -t ${DOCKER_IMAGE_NAME} ."
-                    githubNotify account: 'yatishbhat', context: 'Demo ', credentialsId: '1111', description: 'Build passed', gitApiUrl: '', repo: 'nginxweb1', sha: commit1, status: 'SUCCESS', targetUrl: ''
-            
+                   
                    
                 }
             }
